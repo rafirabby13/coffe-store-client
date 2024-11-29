@@ -1,6 +1,10 @@
+/* eslint-disable no-unused-vars */
+import { useState } from "react";
+import ReactImageUploading from "react-images-uploading";
 import Swal from "sweetalert2";
 
 const AddCoffee = () => {
+  const [photo, setImages] = useState([]);
   const handleAddCoffee = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -57,7 +61,10 @@ const AddCoffee = () => {
         console.log(err);
       });
   };
+  
+  
 
+ 
   return (
     <div className="bg-[#F4F3F0]  space-y-3 w-3/4 mx-auto h-full p-8">
       <h1 className="text-3xl text-purple-700 font-extrabold">Add a Coffee</h1>
@@ -190,6 +197,7 @@ const AddCoffee = () => {
             name="photo"
           />
         </label>
+      
         <div className="btn btn-block btn-accent">
           <input type="submit" value="Add Coffee" />
         </div>
